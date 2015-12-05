@@ -39,7 +39,6 @@
     </dependencies>
 
 
-
     <build>
         <plugins>
             <plugin>
@@ -60,8 +59,6 @@
                 <artifactId>maven-jaxb2-plugin</artifactId>
 
 
-
-
                 <executions>
                     <execution>
                         <id>speech</id>
@@ -76,7 +73,8 @@
                                 <include>sample.xsd</include>
                             </schemaIncludes>
                             <generatePackage>com.mmpsoftware.x.sentinel.speech.schema</generatePackage>
-                            <generateDirectory>${project.build.directory}/generated-sources/xjc-speech</generateDirectory>
+                            <generateDirectory>${project.build.directory}/generated-sources/xjc-speech
+                            </generateDirectory>
                         </configuration>
                     </execution>
                 </executions>
