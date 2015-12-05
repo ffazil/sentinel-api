@@ -1,0 +1,185 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="conversation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="callInfo">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="dtmfInput"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:long" name="callId"/>
+                        <xs:attribute type="xs:long" name="called"/>
+                        <xs:attribute type="xs:string" name="cli"/>
+                        <xs:attribute type="xs:long" name="destination"/>
+                        <xs:attribute type="xs:byte" name="destinationRoute"/>
+                        <xs:attribute type="xs:byte" name="node"/>
+                        <xs:attribute type="xs:byte" name="port"/>
+                        <xs:attribute type="xs:byte" name="trunk"/>
+                        <xs:attribute type="xs:byte" name="timeslot"/>
+                        <xs:attribute type="xs:string" name="type"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="channels">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="channel">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute type="xs:string" name="id"/>
+                                            <xs:attribute type="xs:byte" name="sequenceNr"/>
+                                            <xs:attribute type="xs:string" name="name"/>
+                                            <xs:attribute type="xs:string" name="recorder"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="recordingFiles">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="recordingFile">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="track">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="trackPart">
+                                                        <xs:complexType>
+                                                            <xs:simpleContent>
+                                                                <xs:extension base="xs:string">
+                                                                    <xs:attribute type="xs:string" name="id"/>
+                                                                </xs:extension>
+                                                            </xs:simpleContent>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute type="xs:string" name="id"/>
+                                                <xs:attribute type="xs:byte" name="nrInFile"/>
+                                                <xs:attribute type="xs:string" name="channelList"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="id"/>
+                                    <xs:attribute type="xs:string" name="type"/>
+                                    <xs:attribute type="xs:string" name="uri"/>
+                                    <xs:attribute type="xs:dateTime" name="recordedDateTime"/>
+                                    <xs:attribute type="xs:byte" name="duration"/>
+                                    <xs:attribute type="xs:string" name="coding"/>
+                                    <xs:attribute type="xs:byte" name="sampleSize"/>
+                                    <xs:attribute type="xs:short" name="sampleRate"/>
+                                    <xs:attribute type="xs:byte" name="nrOfTracks"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="speakers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="speaker" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute type="xs:string" name="acousticModel" use="optional"/>
+                                            <xs:attribute type="xs:string" name="context" use="optional"/>
+                                            <xs:attribute type="xs:string" name="description" use="optional"/>
+                                            <xs:attribute type="xs:string" name="id" use="optional"/>
+                                            <xs:attribute type="xs:string" name="sex" use="optional"/>
+                                            <xs:attribute type="xs:string" name="email" use="optional"/>
+                                            <xs:attribute type="xs:string" name="name" use="optional"/>
+                                            <xs:attribute type="xs:string" name="type" use="optional"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="dialogue">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="turn" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="conversationPhase">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute type="xs:string" name="type" use="optional"/>
+                                                        <xs:attribute type="xs:byte" name="status" use="optional"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="recognition">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="utterance"/>
+                                                    <xs:element name="word" maxOccurs="unbounded" minOccurs="0">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="text"/>
+                                                                <xs:element type="xs:string" name="alt" maxOccurs="unbounded" minOccurs="0"/>
+                                                            </xs:sequence>
+                                                            <xs:attribute type="xs:byte" name="nr" use="optional"/>
+                                                            <xs:attribute type="xs:short" name="startMs" use="optional"/>
+                                                            <xs:attribute type="xs:short" name="endMs" use="optional"/>
+                                                            <xs:attribute type="xs:float" name="prob" use="optional"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute type="xs:string" name="id" use="optional"/>
+                                                <xs:attribute type="xs:string" name="engine" use="optional"/>
+                                                <xs:attribute type="xs:string" name="context" use="optional"/>
+                                                <xs:attribute type="xs:string" name="acousticModel" use="optional"/>
+                                                <xs:attribute type="xs:dateTime" name="recognizedDateTime" use="optional"/>
+                                                <xs:attribute type="xs:short" name="processingMs" use="optional"/>
+                                                <xs:attribute type="xs:string" name="recogResult" use="optional"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="id" use="optional"/>
+                                    <xs:attribute type="xs:byte" name="sequenceNr" use="optional"/>
+                                    <xs:attribute type="xs:float" name="conversationTime" use="optional"/>
+                                    <xs:attribute type="xs:int" name="recordingTime" use="optional"/>
+                                    <xs:attribute type="xs:short" name="duration" use="optional"/>
+                                    <xs:attribute type="xs:string" name="trackPartId" use="optional"/>
+                                    <xs:attribute type="xs:string" name="speakerId" use="optional"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="stints">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="stint">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute type="xs:string" name="id"/>
+                                            <xs:attribute type="xs:float" name="startTime"/>
+                                            <xs:attribute type="xs:byte" name="endTime"/>
+                                            <xs:attribute type="xs:string" name="description"/>
+                                            <xs:attribute type="xs:string" name="conversationPhaseType"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="id"/>
+            <xs:attribute type="xs:string" name="source"/>
+            <xs:attribute type="xs:string" name="type"/>
+            <xs:attribute type="xs:string" name="subDomain"/>
+            <xs:attribute type="xs:dateTime" name="startDateTime"/>
+            <xs:attribute type="xs:byte" name="duration"/>
+            <xs:attribute type="xs:string" name="version"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
