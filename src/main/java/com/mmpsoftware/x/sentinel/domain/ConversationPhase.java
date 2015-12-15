@@ -10,4 +10,20 @@ public class ConversationPhase {
     protected String type;
     protected Byte status;
 
+
+    private ConversationPhase(){
+
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Byte getStatus() {
+        return status;
+    }
 }

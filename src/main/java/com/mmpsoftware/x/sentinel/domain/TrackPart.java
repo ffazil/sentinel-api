@@ -9,4 +9,15 @@ public class TrackPart {
     protected String value;
     protected String id;
 
+    private TrackPart(){
+
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getId() {
+        return id;
+    }
 }

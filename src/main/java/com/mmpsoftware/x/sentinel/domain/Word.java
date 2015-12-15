@@ -16,4 +16,32 @@ public class Word {
     protected Short endMs;
     protected Float prob;
 
+
+    private Word(){
+
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public List<String> getAltText() {
+        return altText;
+    }
+
+    public Byte getNr() {
+        return nr;
+    }
+
+    public Short getStartMs() {
+        return startMs;
+    }
+
+    public Short getEndMs() {
+        return endMs;
+    }
+
+    public Float getProb() {
+        return prob;
+    }
 }

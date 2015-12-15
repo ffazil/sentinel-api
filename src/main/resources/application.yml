@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+    name: sentinel-api
+sentinel:
+  conversation:
+    import:
+      directory: /Users/ffazil/sentinel/conversation

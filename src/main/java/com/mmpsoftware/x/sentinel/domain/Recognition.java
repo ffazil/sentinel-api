@@ -20,4 +20,43 @@ public class Recognition {
     protected Short processingMs;
     protected String recogResult;
 
+    private Recognition(){
+
+    }
+
+    public String getUtterance() {
+        return utterance;
+    }
+
+    public List<Word> getWords() {
+        return words;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getEngine() {
+        return engine;
+    }
+
+    public String getContext() {
+        return context;
+    }
+
+    public String getAcousticModel() {
+        return acousticModel;
+    }
+
+    public Date getRecognizedDateTime() {
+        return recognizedDateTime;
+    }
+
+    public Short getProcessingMs() {
+        return processingMs;
+    }
+
+    public String getRecogResult() {
+        return recogResult;
+    }
 }

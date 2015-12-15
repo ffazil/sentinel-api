@@ -17,4 +17,44 @@ public class Turn {
     protected String speakerId;
 
 
+
+    private Turn(){
+
+    }
+
+    public ConversationPhase getConversationPhase() {
+        return conversationPhase;
+    }
+
+    public Recognition getRecognition() {
+        return recognition;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Integer getSequenceNr() {
+        return sequenceNr;
+    }
+
+    public Float getConversationTime() {
+        return conversationTime;
+    }
+
+    public Integer getRecordingTime() {
+        return recordingTime;
+    }
+
+    public Short getDuration() {
+        return duration;
+    }
+
+    public String getTrackPartId() {
+        return trackPartId;
+    }
+
+    public String getSpeakerId() {
+        return speakerId;
+    }
 }
