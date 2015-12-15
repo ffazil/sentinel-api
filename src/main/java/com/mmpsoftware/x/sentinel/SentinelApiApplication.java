@@ -17,11 +17,9 @@ public class SentinelApiApplication {
 
     @Bean(name = "org.dozer.Mapper")
     public DozerBeanMapper dozerBean() {
-        /*List<String> mappingFiles = Arrays.asList(
-                "dozer-global-configuration.xml",
-                "dozer-bean-mappings.xml",
-                "more-dozer-bean-mappings.xml"
-        );*/
+        List<String> mappingFiles = Arrays.asList(
+                "mapping.xml"
+        );
 
         DozerBeanMapper dozerBean = new DozerBeanMapper();
         //dozerBean.setMappingFiles(mappingFiles);
