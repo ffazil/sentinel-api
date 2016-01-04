@@ -7,66 +7,18 @@
     <mapping>
         <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation</class-a>
         <class-b>com.mmpsoftware.x.sentinel.domain.Conversation</class-b>
+        
+        <field>
+            <a>callInfo</a>
+            <b>callInfo</b>
+        </field>
+        <field>
+            <a>channels.channel</a>
+            <b>channels[0]</b>
+        </field>
+        
     </mapping>
 
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation$CallInfo</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.CallInfo</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation$Channels</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.Channel</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.Dialogue.Turn.ConversationPhase</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.ConversationPhase</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.Dialogue</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.Dialogue</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.Dialogue.Turn.Recognition</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.Recognition</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.RecordingFile</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.RecordingFile</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.Speaker</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.Speaker</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.Stint</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.Stint</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.RecordingFiles.RecordingFile.Track</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.Track</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.RecordingFiles.RecordingFile.Track.TrackPart</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.TrackPart</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.Dialogue.Turn</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.Turn</class-b>
-    </mapping>
-
-    <mapping>
-        <class-a>com.mmpsoftware.x.sentinel.speech.schema.Conversation.Dialogue.Turn.Recognition.Word</class-a>
-        <class-b>com.mmpsoftware.x.sentinel.domain.Word</class-b>
-    </mapping>
+    
 
     </mappings>

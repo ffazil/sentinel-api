@@ -1,5 +1,6 @@
 package com.mmpsoftware.x.sentinel;
 
+import com.mmpsoftware.x.sentinel.util.ConversationAssembler;
 import org.dozer.DozerBeanMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,8 +23,14 @@ public class SentinelApiApplication {
         );
 
         DozerBeanMapper dozerBean = new DozerBeanMapper();
-        //dozerBean.setMappingFiles(mappingFiles);
+        dozerBean.setMappingFiles(mappingFiles);
         return dozerBean;
+    }
+
+    @Bean
+    public ConversationAssembler conversationAssembler(){
+        ConversationAssembler conversationAssembler = new ConversationAssembler();
+        return conversationAssembler;
     }
 
 }

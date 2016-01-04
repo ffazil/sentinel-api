@@ -13,7 +13,6 @@ import java.util.Set;
  * @since 05/12/15
  */
 @Document(indexName = "conversations")
-@JsonTypeInfo(use=JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Conversation {
 
     @Id

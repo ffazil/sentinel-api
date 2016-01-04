@@ -2,6 +2,7 @@ package com.mmpsoftware.x.sentinel.config;
 
 import com.mmpsoftware.x.sentinel.repository.es.ConversationRepository;
 import com.mmpsoftware.x.sentinel.speech.schema.Conversation;
+import com.mmpsoftware.x.sentinel.util.ConversationAssembler;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,7 +32,7 @@ public class FileIntegrationConfiguration {
     private NullChannel nullChannel;
 
     @Autowired
-    private Mapper mapper;
+    private ConversationAssembler conversationAssembler;
 
     @Autowired
     private ConversationRepository conversationRepository;
@@ -90,7 +91,7 @@ public class FileIntegrationConfiguration {
                 .transform(Transformers.unmarshaller(jaxb2Marshaller()))
                 .handle(p -> {
                     Conversation source = (Conversation) p.getPayload();
-                    com.mmpsoftware.x.sentinel.domain.Conversation target = mapper.map(source, com.mmpsoftware.x.sentinel.domain.Conversation.class);
+                    com.mmpsoftware.x.sentinel.domain.Conversation target = conversationAssembler.from(source);
                     target = conversationRepository.save(target);
                     System.out.println(target);
 

@@ -10,21 +10,49 @@ import java.util.Set;
  * @author ffazil
  * @since 05/12/15
  */
-@Document(indexName = "dialogues")
 public class Dialogue {
-    @Id
-    private String uid;
     protected Set<Turn> turns = new HashSet<>(0);
 
-    private Dialogue(){
+    public Dialogue(Set<Turn> turns) {
+        this.turns = turns;
+    }
+
+    public Dialogue(){
 
     }
 
-    public String getUid() {
-        return uid;
+
+
+    public void setTurns(Set<Turn> turns) {
+        this.turns = turns;
     }
 
     public Set<Turn> getTurns() {
         return turns;
+    }
+
+    public static class DialogueBuilder {
+        protected Set<Turn> turns = new HashSet<>(0);
+
+        private DialogueBuilder() {
+        }
+
+        public static DialogueBuilder aDialogue() {
+            return new DialogueBuilder();
+        }
+
+        public DialogueBuilder withTurns(Set<Turn> turns) {
+            this.turns = turns;
+            return this;
+        }
+
+        public DialogueBuilder but() {
+            return aDialogue().withTurns(turns);
+        }
+
+        public Dialogue build() {
+            Dialogue dialogue = new Dialogue(turns);
+            return dialogue;
+        }
     }
 }

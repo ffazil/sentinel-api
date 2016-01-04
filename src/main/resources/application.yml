@@ -10,3 +10,6 @@ sentinel:
   conversation:
     import:
       directory: /Users/ffazil/sentinel/conversation
+
+logging:
+  level: TRACE
