@@ -9,7 +9,7 @@ spring:
 sentinel:
   conversation:
     import:
-      directory: /Users/ffazil/sentinel/conversation
+      directory: ${user.home}/import/
 
 logging:
   level: TRACE

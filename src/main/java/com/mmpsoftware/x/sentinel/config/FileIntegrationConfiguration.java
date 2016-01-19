@@ -79,7 +79,7 @@ public class FileIntegrationConfiguration {
     @Bean
     public IntegrationFlow importConversation() {
         return IntegrationFlows
-                .from(Files.inboundAdapter(new File("/Users/ffazil/sentinel/import"))
+                .from(Files.inboundAdapter(new File(inboundPath))
                                 .patternFilter("*conversation*.xml")
                                 .preventDuplicates(),
                         e -> e.poller(Pollers.fixedDelay(1000)
