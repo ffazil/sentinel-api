@@ -6,10 +6,15 @@ spring:
   profiles: dev
   application:
     name: sentinel-api
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
 sentinel:
   conversation:
     import:
       directory: ${user.home}/import/
+
 
 logging:
   level: TRACE
